@@ -3,10 +3,10 @@ const moment=require("moment-timezone");
 moment.tz.setDefault("Asia/Kolkata");
 
 const saveMessage =async(req,res)=>{
-    const{name,email,number,reason,message,from}=req.body; 
+    const{name,email,countryCode,number,reason,message,from}=req.body; 
     try {
         if(req.body){
-            const Message=new Messagemodel({name,email,number,reason,message,time:moment().format('LLLL'),from});
+            const Message=new Messagemodel({name,email,countryCode,number,reason,message,time:moment().format('LLLL'),from});
             await Message.save();
             res.status(201).json({"msg":"Thank you for reaching out to us."});
         }else{

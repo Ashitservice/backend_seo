@@ -3,7 +3,7 @@ const moment=require("moment-timezone");
 moment.tz.setDefault("Asia/Kolkata");
 
 const saveMessage =async(req,res)=>{
-    const{name,email,number,reason,message,from}=req.body;
+    const{name,email,number,reason,message,from}=req.body; 
     try {
         if(req.body){
             const Message=new Messagemodel({name,email,number,reason,message,time:moment().format('LLLL'),from});

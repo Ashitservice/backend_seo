@@ -8,6 +8,7 @@ const messageSchema=mongoose.Schema({
     reason:String,
     message:String,
     from:String,
+    medium:String,
     time:String
 })
 

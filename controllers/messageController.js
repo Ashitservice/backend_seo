@@ -3,14 +3,14 @@ const moment=require("moment-timezone");
 moment.tz.setDefault("Asia/Kolkata");
 
 const saveMessage =async(req,res)=>{
-    const{name,email,countryCode,number,reason,message,from}=req.body; 
+    const{name,email,countryCode,number,reason,message,from,medium}=req.body; 
     try {
         if(req.body){
             let userAleradyExist = await Messagemodel.findOne({email});
             if(userAleradyExist){
                 return res.status(400).json({ "msg": "You already filled the form" });
             }
-            const Message=new Messagemodel({name,email,countryCode,number,reason,message,time:moment().format('LLLL'),from});
+            const Message=new Messagemodel({name,email,countryCode,number,reason,message,time:moment().format('LLLL'),from,medium});
             await Message.save();
             res.status(201).json({"msg":"Thank you for reaching out to us."});
         }else{

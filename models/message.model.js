@@ -1,15 +1,15 @@
 const mongoose=require("mongoose");
 
 const messageSchema=mongoose.Schema({
-    name:String,
-    email:String,
-    countryCode:String,
-    number:String,
-    reason:String,
-    message:String,
-    from:String,
-    medium:String,
-    time:String
+    name:{type:String,required:true},
+    email:{type:String,required:true},
+    countryCode:{type:String,required:true},
+    number:{type:String,required:true},
+    reason:{type:String,required:true},
+    message:{type:String,required:true},
+    from:{type:String,required:true},
+    medium:{type:String,required:true},
+    time:{type:String,required:true}
 })
 
 const Messagemodel=mongoose.model("message",messageSchema);

@@ -5,7 +5,6 @@ const messageSchema=mongoose.Schema({
     email:{type:String,required:true},
     countryCode:{type:String,required:true},
     number:{type:String,required:true},
-    reason:{type:String,required:true},
     message:{type:String,required:true},
     from:{type:String,required:true},
     medium:{type:String,required:true},
